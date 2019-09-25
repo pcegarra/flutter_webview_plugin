@@ -383,8 +383,8 @@ static NSString *const CHANNEL_NAME = @"flutter_webview_plugin";
 - (void)registerJavaScriptChannels:(NSSet*)channelNames
                         controller:(WKUserContentController*)userContentController {
     for (NSString* channelName in channelNames) {
-        FLTJavaScriptChannel* _channel =
-        [[FLTJavaScriptChannel alloc] initWithMethodChannel: channel
+        FLTJavaScriptChannel2* _channel =
+        [[FLTJavaScriptChannel2 alloc] initWithMethodChannel: channel
                                       javaScriptChannelName:channelName];
         [userContentController addScriptMessageHandler:_channel name:channelName];
         NSString* wrapperSource = [NSString

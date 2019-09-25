@@ -4,7 +4,7 @@
 
 #import "JavaScriptChannelHandler.h"
 
-@implementation FLTJavaScriptChannel {
+@implementation FLTJavaScriptChannel2 {
   FlutterMethodChannel* _methodChannel;
   NSString* _javaScriptChannelName;
 }
