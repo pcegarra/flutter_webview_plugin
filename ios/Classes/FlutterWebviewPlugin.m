@@ -130,9 +130,9 @@ static NSString *const CHANNEL_NAME = @"flutter_webview_plugin";
 
     NSString *scriptString = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
     WKUserScript *script = [[WKUserScript alloc] initWithSource:scriptString injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-    WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+
+    WKWebViewConfiguration* configuration = [[WKWebViewConfiguration alloc] init];
     [userContentController addUserScript:script];
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.userContentController = userContentController;
     self.webview = [[WKWebView alloc] initWithFrame:rc configuration:configuration];
 
